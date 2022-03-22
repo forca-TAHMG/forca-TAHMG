@@ -1,5 +1,5 @@
 primeiro commit uhulll
 
-# Jogo da forca
+# Jogo da forca™
 ## Como funciona?
 # Desenvolvido por 
