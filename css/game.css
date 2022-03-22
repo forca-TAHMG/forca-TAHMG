@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Outfit&display=swap');
 html{
     font-family: Montserrat;
+    background-color:slategray;
+    color: whitesmoke;
+}
+
+div.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
