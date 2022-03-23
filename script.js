@@ -8,7 +8,12 @@ class Usuário{
     constructor(){
         this.nome = prompt("Insira o seu nome: ");
         this.email = prompt("Insira seu email");
-        this.venceuOuPerdeu = "";
+        this.vitorias = 0;
+        this.derrotas = 0;
+    }
+    calculaTotal = function(vitorias, derrotas) {
+       let total = `Vitorias ${this.vitorias} entre ${this.vitorias + this.derrotas}`;
+     return total;
     }
 }
 
