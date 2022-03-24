@@ -42,6 +42,13 @@ function substituipalavrapor_(palavra) {
         }
 
         console.log(novoarray);
+        let mostranatela = novoarray.toString();
+        mostranatela = mostranatela.replace(/,/g, "");
+        console.log(mostranatela);
+
+        document.getElementById("letras").innerHTML = mostranatela;
+
+
 }
 
 function jogar() {
@@ -53,7 +60,14 @@ function jogar() {
 }
 
 function jogo() {
+    let letraescolhida = document.getElementById("letra").value;
+    console.log(letraescolhida);
 
+    let acertouletra = palavra.includes(letraescolhida);
+
+    if(acertouletra) {
+        
+    }
 }
 
 
