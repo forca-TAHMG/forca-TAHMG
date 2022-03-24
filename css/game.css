@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Outfit&display=swap');
 html{
     font-family: Montserrat;
-    background-color:slategray;
+    background-color:rgb(54, 61, 68);
     color: whitesmoke;
 }
 
@@ -9,4 +9,84 @@ div.body{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+div.hangmain {
+    display: flex;
+    flex-direction: column;
+}
+
+input.campo{
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border: 0.2rem solid;
+    border-radius: 2rem;
+    height: 3rem;
+    width: 15rem;
+    text-align: center;
+}
+
+select{
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border: 0.2rem solid;
+    border-radius: 2rem;
+    height: 4rem;
+    width: 15rem; 
+    text-align: center;
+}
+
+button{
+    font-family: inherit;
+    font-size: 100%;
+    text-align: center;
+    border-radius: 2rem;
+    height: 4rem;
+    width: 15rem;
+    color: aliceblue;
+    background-color: rgb(145, 13, 206);
+    border-color: rgb(145, 13, 206);
+
+}
+button:hover{
+    background-color: rgb(36,3,51);
+    border-color: rgb(36, 3, 51);
+}
+button:focus{
+    animation: fadeee 0.3s;
+    background-color: rgb(248, 248, 248);
+    border-color: rgb(248, 248, 248);
+    color: rgb(37, 37, 37);
+}
+input.campo:focus{
+    background   : rgba(145, 13, 206, 0.507);
+    color: aliceblue;
+    border-color: rgba(0, 0, 0, 0.507);
+}
+
+@keyframes fadeee {
+    from{
+        background-color: rgb(36,3,51);
+        border-color: rgb(36, 3, 51);}    
+    to{
+        background-color: rgb(248, 248, 248);
+        border-color: rgb(248, 248, 248);
+        color: rgb(37, 37, 37);   
+    }
+}
+
+label{
+    font-family: inherit;
+}
+div.wrapup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+div#wrapup2{
+    flex-direction: column;
 }

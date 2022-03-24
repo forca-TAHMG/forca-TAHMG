@@ -8,7 +8,6 @@ class Usuário{
     constructor(){
         this.nome = prompt("Insira o seu nome: ");
         this.email = prompt("Insira seu email");
-        
         this.venceuOuPerdeu = "";
     }
 }
@@ -42,4 +41,3 @@ console.log(pessoa)
 const palavra1 = new Palavra()
 console.log(palavra1)
 console.log(palavra1.palavraSorteada)
-

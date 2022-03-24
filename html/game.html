@@ -13,7 +13,37 @@
     <div class="body">
         <h1 class="title">Forca / Hangman</h1>
         
-        div.hangman
+        <div class="hangman">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" class="campo" readonly>
+            <label for="email">E-mail</label>
+            <input type="text" id="email" class="campo" readonly>
+
+            <h2>Tema</h2>
+            <div class="wrapup">
+            <label for="select">Selecione o tema</label>
+            <select name="select" id="categoria">
+            <option value="frutas">Frutas</option>
+            <option value="animais">Animais</option>
+            <option value="cores">Cores</option>
+            </select>
+            <button type="submit" onclick="atualizaTema();">Atualizar tema (isso reseta a palavra)</button> </div>
+            <h2>Palavra</h2>
+            <input type="text" id="palavra" class="campo" readonly>
+            <h2>Chances</h2>
+            <input type="text" id="chances" class="campo" readonly>
+            <h2>Vitórias</h2>
+            <input type="text" id="vitorias" class="campo" readonly>
+            <h2>Derrotas</h2>
+            <input type="text" id="derrotas" class="campo" readonly>
+            <h2>Palpite</h2>
+            <input type="text" id="letra" class="campo" maxlength="1" required>
+            <button type="submit" onclick="insereLetra(Document.getElementById(letra).value);">Submeter</button>
+            <div class="wrapup" id="wrapup2">
+            <h2>Palpites já realizados</h2>
+            <textarea name="textarea" id="palpites" cols="50" rows="10" readonly></textarea>
+            </div>
+        </div>
     </div>
 </body>
 </html>
