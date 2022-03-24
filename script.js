@@ -31,14 +31,50 @@ class Palavra{
         }
 
         else {// inserir uma mensagem de erro 
-        }   
+        }
         
+    }
+    
+
+    inserirLetra(){
+        let letra = prompt("Digite uma Letra!");
+        
+        acertouLetra();
+
+    }
+
+    acertouLetra() {
+        for (let i = 0; i < porLetra.length; i++) {
+            if (letra == porLetra[i]) {
+                function exibeLetra(letra) {
+                    
+                }
+            }
+        }
     }
 }
 
-const pessoa = new Usuário()
-console.log(pessoa)
-const palavra1 = new Palavra()
-console.log(palavra1)
-console.log(palavra1.palavraSorteada)
+const pessoa = new Usuário();
+console.log(pessoa);
+const palavra1 = new Palavra();
+console.log(palavra1);
+console.log(palavra1.palavraSorteada);
 
+let porLetra = palavra1.palavraSorteada.split("");
+console.log(porLetra);
+let traco = 0;
+
+for (let i = 0; i < porLetra.length; i++) {
+    document.write("_ ");
+    traco++
+}
+
+{/* <script>
+    inserirLetra(){
+        palavra1.palavraSorteada
+        var newStr = myStr.replace(/_/g, "-");
+        
+        // Insert modified string in paragraph
+        document.getElementById("myText").innerHTML = newStr;
+    }
+</script> */}
