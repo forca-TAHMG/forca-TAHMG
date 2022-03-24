@@ -11,6 +11,11 @@ class Usuário{
         this.temas = document.getElementById("tema").value
         this.vitorias = 0
         this.derrotas = 0
+
+    }
+    calculaTotal = function(vitorias, derrotas) {
+       let total = `Vitorias ${this.vitorias} entre ${this.vitorias + this.derrotas}`;
+     return total;
     }
 }
 
