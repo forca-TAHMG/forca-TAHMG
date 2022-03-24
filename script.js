@@ -5,10 +5,10 @@ const temas = {
 }
 
 let palavrarandom = ""; //palavra sorteada
-let arr = ""; //array da palavra sorteada
+let arr = []; //array da palavra sorteada
 let text = ""; // letras erradas que aparecem na div "letraserradas"
 let letraescolhida = ""; //letra digitada pelo usuário para teste se tem na palavra
-let novoarray = ""; //array da palavra substituído por "_" que mostra na tela
+let novoarray = []; //array da palavra substituído por "_" que mostra na tela
 
 class Usuário{
     constructor(){
