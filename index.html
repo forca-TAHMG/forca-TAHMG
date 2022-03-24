@@ -12,16 +12,50 @@
     <title>Jogo da forca</title>
 </head>
 <body>
-    <h1>Regras do jogo</h1>
-    <p>O seu objetivo é descobrir a palavra oculta utilizando as letras do alfabeto</p>
-    <p>O tamanho da palavra oculta (quantidade de letras) está representado pelos traços </p>
-    <p>Insira uma letra. Se a letra existir na palavra, a letra será exibida. Caso contrário, você perde uma tentativa </p>
-    <p>Você pode errar 5 vezes</p>
-    <p>Se você errar pela sexta vez, você perde o jogo </p>
+    <div class="regras">
+        <h1>Regras do jogo</h1>
+        <p>O seu objetivo é descobrir a palavra oculta utilizando as letras do alfabeto</p>
+        <p>O tamanho da palavra oculta (quantidade de letras) está representado pelos traços </p>
+        <p>Insira uma letra. Se a letra existir na palavra, a letra será exibida. Caso contrário, você perde uma tentativa </p>
+        <p>Você pode errar 5 vezes</p>
+        <p>Se você errar pela sexta vez, você perde o jogo </p>
+        <hr>
+        <p>A palavra oculta está relacionada com a dica XXXX </p>
+    </div>
+    <div class="cadastro">
+        <label for="">Insira seu Nome: </label>
+        <input type="text" id="nome">
+        <br><br>
+        <label for="">Insira seu e-mail: </label>
+        <input type="text" id="email">
+        <br><br>
+        <label for="">Escolha o tema: </label>
+        <select id="tema">
+            <option value="frutas">Frutas</option>
+            <option value="animais">Animais</option>
+            <option value="cores">Cores</option>
+        </select>
+        <br><br>
+        <button onclick="jogar()">JOGAR</button>
+    </div>
     <hr>
-    <p>A palavra oculta está relacionada com a dica XXXX </p>
-        
+    <div class="jogo" style="text-align: center;">
+        <br>
+        <div class="letras" style="font-size: 40px; letter-spacing: 20px;">
+            teste
+        </div>
+        <br><br>
+        <div>
+            <label for="">Digite uma letra: </label>
+            <input type="text" id="letra">
+            <button onclick="jogo()">Testar Letra</button>
+        </div>
 
+    </div>
+    <div class="forca">
+
+    </div>
+        
     <script src="script.js"></script>
 </body>
 </html>
