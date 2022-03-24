@@ -19,9 +19,9 @@ class Usuário{
     }
 }
 
-function sorteiapalavra(tema) {
-    let palavra = "";
+let palavra = "";
 
+function sorteiapalavra(tema, palavra) {
     if(tema == "frutas") { 
         palavra =  temas.frutas[parseInt(Math.random() * temas.frutas.length)] // pega um elemento aleatório do array temas.frutas
     }
@@ -38,30 +38,47 @@ function sorteiapalavra(tema) {
 }
 
 function substituipalavrapor_(palavra) {
-        let arraydeletras = palavra.split("")
-        console.log(arraydeletras)
-        let novoarray= [];
-        
-        for(let i = 0; i<arraydeletras.length; i++) {
-            novoarray[i] = "_";
-        }
+    let arraydeletras = palavra.split("")
+    console.log(arraydeletras)
+    let novoarray= [];
+    
+    for(let i = 0; i<arraydeletras.length; i++) {
+        novoarray[i] = "_";
+    }
 
-        console.log(novoarray);
-        let mostraNaTela = novoarray.toString();
-        mostraNaTela = mostraNaTela.replace(/,/g, "");
+    console.log(novoarray);
+    let mostraNaTela = novoarray.toString();
+    mostraNaTela = mostraNaTela.replace(/,/g, "");
+    document.getElementById("letras").innerHTML = mostraNaTela;
 }
 
 function jogar() {
     const usuario = new Usuário();
-    let palavra = sorteiapalavra(usuario.temas);
+    palavra = sorteiapalavra(usuario.temas);
     console.log(usuario);
     console.log(palavra);
     substituipalavrapor_(palavra);
 }
 
 function jogo() {
+    let letraEscolhida = document.getElementById("letra").value;
+    console.log(letraEscolhida);
+    
+    let acertouLetra = palavra.includes(letraEscolhida);
+    if(acertouLetra){
+        console.log("passou no true")
 
+    }
+    else {
+        console.log("ta no false");
+    }
+    
+    // for (let i = 0; i < porLetra.length; i++) {
+    //     if (letra == porLetra[i]) {
+    //         function exibeLetra(letra) {
 }
+
+
 
 
 /*
@@ -136,4 +153,4 @@ for (let i = 0; i < porLetra.length; i++) {
         // Insert modified string in paragraph
         document.getElementById("myText").innerHTML = newStr;
     }
-</script> */}
+</script> */
