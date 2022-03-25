@@ -1,6 +1,5 @@
 const temas = {
-    // frutas: ["manga", "banana", "maçã", "laranja", "limão", "abacaxi", "tangerina", "uva", "morango", "maracujá"],
-    frutas: ["maçã"],
+    frutas: ["manga", "banana", "maçã", "laranja", "limão", "abacaxi", "tangerina", "uva", "morango", "maracujá"],
     animais: ["cachorro", "gato", "galinha", "vaca", "leão", "elefante", "cavalo", "cobra", "urso", "coelho"],
     cores: ["amarelo", "verde", "azul", "vermelho", "branco", "preto", "roxo", "cinza", "rosa", "marrom"]
 }
@@ -172,7 +171,7 @@ function oJogadorGanhou() {
 /**
 class Palavra{
     constructor(){
-        this.tema = prompt("Escolha um dos temas: frutas, animais ou cores");
+        this.tema = ""
         this.palavraSorteada = this.sorteiaPalavra();
     }
     sorteiaPalavra(){
@@ -199,4 +198,4 @@ const palavra1 = new Palavra()
 console.log(palavra1)
 console.log(palavra1.palavraSorteada)
 
-**/
+*/
