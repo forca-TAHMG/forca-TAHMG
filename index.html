@@ -22,12 +22,12 @@
         <hr>
         <p>A palavra oculta está relacionada com a dica XXXX </p>
     </div>
-    <div class="cadastro">
+    <form class="cadastro" action="javascript:jogar()" >
         <label for="">Insira seu Nome: </label>
-        <input type="text" id="nome">
+        <input required type="text" id="nome">
         <br><br>
         <label for="">Insira seu e-mail: </label>
-        <input type="text" id="email" placeholder="nome@email.com">
+        <input required type="email"  id="email" placeholder="nome@email.com">
         <br><br>
         <label for="">Escolha o tema: </label>
         <select id="tema">
@@ -36,8 +36,8 @@
             <option value="cores">Cores</option>
         </select>
         <br><br>
-        <button onclick="jogar()">JOGAR</button>
-    </div>
+        <button type="submit">JOGAR</button>
+    </form>
     <hr>
     <div class="jogo" style="text-align: center;">
         <br>
