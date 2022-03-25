@@ -10,13 +10,9 @@ color: whitesmoke;
 div.body{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
-div.hangmain {
-    display: flex;
-    flex-direction: column;
-}
 
 input{
     font-family: inherit;
