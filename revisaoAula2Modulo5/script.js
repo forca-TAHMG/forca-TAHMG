@@ -1,7 +1,11 @@
-const temas = {
-    frutas: ["manga", "banana", "maçã", "laranja", "limão", "abacaxi", "tangerina", "uva", "morango", "maracujá"],
-    animais: ["cachorro", "gato", "galinha", "vaca", "leão", "elefante", "cavalo", "cobra", "urso", "coelho"],
-    cores: ["amarelo", "verde", "azul", "vermelho", "branco", "preto", "roxo", "cinza", "rosa", "marrom"]
+
+function obterPalavra() {
+    const temas = {
+        frutas: ["manga", "banana", "maçã", "laranja", "limão", "abacaxi", "tangerina", "uva", "morango", "maracujá"],
+        animais: ["cachorro", "gato", "galinha", "vaca", "leão", "elefante", "cavalo", "cobra", "urso", "coelho"],
+        cores: ["amarelo", "verde", "azul", "vermelho", "branco", "preto", "roxo", "cinza", "rosa", "marrom"]
+    }
+    return temas;
 }
 
 const TENTATIVAS = 6;
@@ -16,22 +20,40 @@ let stringDeUnderlines = "";
 let palavraSemAcento = "";
 let erros = 0; //contador de erros, tantos erros é gameover
 
+// calculaTotal = function (vitorias, derrotas) {
+//     let total = `Vitorias ${this.vitorias} entre ${this.vitorias + this.derrotas}`;
+//     return total;
+//     // método que mostra resultado do usuário
+// }
+
+
 
 class Usuário {
-    constructor() {
-        this.nome = document.getElementById("nome").value
-        this.email = document.getElementById("email").value
-        this.temas = document.getElementById("tema").value
+    constructor(nome, email) {
+        this.nome = nome
+        this.email = email
         this.vitorias = 0
         this.derrotas = 0
-
-    }
-    calculaTotal = function (vitorias, derrotas) {
-        let total = `Vitorias ${this.vitorias} entre ${this.vitorias + this.derrotas}`;
-        return total;
-        // método que mostra resultado do usuário
     }
 }
+
+function sortearPalavra(temaRecebido, objetoDeTemas) { // funcão que sorteia a palavra, salva na "palavraRandom" e retorna a "palavraRandom"
+    let palavraRandom = ""
+    if (temaRecebido == "frutas") {
+        palavraRandom = obterPalavra.frutas[parseInt(Math.random() * obterPalavra.frutas.length)] // pega um elemento aleatório do array obterPalavra.frutas
+    }
+
+    else if (temaRecebido == "animais") {
+        palavraRandom = obterPalavra.animais[parseInt(Math.random() * obterPalavra.animais.length)] // pega um elemento aleatório do array obterPalavra.animais
+    }
+
+    else if (temaRecebido == "cores") {
+        palavraRandom = obterPalavra.cores[parseInt(Math.random() * obterPalavra.cores.length)] // pega um elemento aleatório do array obterPalavra.cores
+    }
+
+    return palavraRandom;
+}
+
 
 function inicializarVariaveis() { // Apaga todos os valores para começar um jogo novo
     palavraRandom = "";
@@ -44,22 +66,33 @@ function inicializarVariaveis() { // Apaga todos os valores para começar um jog
     erros = 0
 }
 
-function sorteiapalavra(tema) { // funcão que sorteia a palavra, salva na "palavraRandom" e retorna a "palavraRandom"
-
-    if (tema == "frutas") {
-        palavraRandom = temas.frutas[parseInt(Math.random() * temas.frutas.length)] // pega um elemento aleatório do array temas.frutas
-    }
-
-    else if (tema == "animais") {
-        palavraRandom = temas.animais[parseInt(Math.random() * temas.animais.length)] // pega um elemento aleatório do array temas.animais
-    }
-
-    else if (tema == "cores") {
-        palavraRandom = temas.cores[parseInt(Math.random() * temas.cores.length)] // pega um elemento aleatório do array temas.cores
-    }
-
-    return palavraRandom;
+function retirarAcento(palavraRandom) {
+    return palavraRandom.normalize('NFD').replace(/[\u0300-\u036f]/g, ""); // tira todos os acentos, inclusive 'ç'
 }
+
+
+// Primeira função a ser chamada
+
+function jogar() { //função chamada no click do botão "JOGAR"
+    inicializarVariaveis();
+    let nome = document.getElementById("nome").value;
+    let email = document.getElementById("email").value;
+    let tema = document.getElementById("tema").value;
+
+    usuario = new Usuário(nome, email); // CRIA UM NOVO USUÁRIO
+
+    let palavraRandom = sortearPalavra(tema, obterPalavra()); // SORTEIA A PALAVRA E SALVA
+    console.log(usuario);
+    console.log(palavraRandom);
+    console.log(palavraSemAcento);
+    substituiPalavraPor_(palavraSemAcento);//chama a função que faz um array de traços do mesmo tamanho que a palavra passada como parâmetro
+    
+    let palavraSemAcento = retirarAcento(palavraRandom)
+    return palavraRandom, palavraSemAcento;
+
+}
+
+
 
 function mostraNaTela(palavra) { // recebe um array de "-" e transforma em string
     let mostraNaTela = palavra.toString(); // o método tostring separa os elementos do array por ","
@@ -85,16 +118,6 @@ function substituiPalavraPor_(palavra) {
     mostraNaTela(arrayDeUnderlines); //chama a função mostra na tela passando o array de traços como parâmetro
 }
 
-function jogar() { //função chamada no click do botão "JOGAR"
-    inicializarVariaveis();
-    usuario = new Usuário(); // CRIA UM NOVO USUÁRIO
-    palavraRandom = sorteiapalavra(usuario.temas); // SORTEIA A PALAVRA E SALVA
-    console.log(usuario);
-    console.log(palavraRandom);
-    palavraSemAcento = palavraRandom.normalize('NFD').replace(/[\u0300-\u036f]/g, ""); // tira todos os acentos, inclusive 'ç'
-    console.log(palavraSemAcento);
-    substituiPalavraPor_(palavraSemAcento);//chama a função que faz um array de traços do mesmo tamanho que a palavra passada como parâmetro
-}
 
 function escreveLetraErrada(letra) { //função que escreve as letras erradas que são recebidas como parâmetro na div "letraserradas"
     letraErrada += `${letra} / `; // vai armazenando na variável letraErrada a letra errada separando por um /
